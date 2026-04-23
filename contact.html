@@ -17,7 +17,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="education.html">Education</a></li>
-            <!-- <li><a href="projects.html">Projects</a></li> --> <!-- Projects section hidden for now - Turn on later -->
+            <!-- <li><a href="projects.html">Projects</a></li> -->
+            <!-- Projects section hidden for now - Turn on later -->
             <li><a href="skills.html">Skills</a></li>
             <li><a href="experience.html">Experience</a></li>
             <li><a href="qualifications.html">Qualifications</a></li>
@@ -42,7 +43,8 @@
 
         <div style="display: flex; flex-wrap: wrap; gap: 2rem; max-width: 1200px; margin: 0 auto;">
             <!-- Contact Info -->
-            <div style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between;">
+            <div
+                style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between;">
                 <!-- Main Info Card -->
                 <div class="glass-card" style="padding-left: 2.5rem; position: relative; overflow: hidden;">
                     <div
@@ -120,8 +122,7 @@
                     <div
                         style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color)); border-top-left-radius: 14px; border-bottom-left-radius: 14px;">
                     </div>
-                    <form class="contact-form" action="#" method="POST"
-                        onsubmit="sendEmailDraft(event)">
+                    <form class="contact-form" action="#" method="POST" onsubmit="sendEmailDraft(event)">
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                             <div class="form-group" style="flex: 1; min-width: 200px;">
                                 <label for="name"
@@ -150,7 +151,8 @@
                             <label for="message"
                                 style="color: var(--text-main); font-weight: 600; font-size: 0.9rem;">Message</label>
                             <textarea id="message" class="form-control" placeholder="Tell me about your project..."
-                                rows="3" required style="background: var(--bg-color); resize: none; min-height: 120px;"></textarea>
+                                rows="3" required
+                                style="background: var(--bg-color); resize: none; min-height: 120px;"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary"
@@ -173,18 +175,18 @@
 
         function sendEmailDraft(event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             // Format the body text in the draft
             const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-            
+
             // Create the mailto link with encoded subject and body
             const mailtoLink = `mailto:mg22091@mgt.pdn.ac.lk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
+
             // Open the default email client
             window.location.href = mailtoLink;
         }
